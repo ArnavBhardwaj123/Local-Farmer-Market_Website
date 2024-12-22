@@ -1,0 +1,67 @@
+.services-scroll {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+    /* Hides any overflow from the scrolling cards */
+}
+
+.services-wrapper {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+    /* Infinite scrolling effect */
+}
+
+.service-card {
+    flex: 0 0 auto;
+    /* Prevent cards from shrinking */
+    width: 250px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+    /* Space between cards */
+    transition: transform 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    /* Hover effect */
+}
+
+/* Continuous scroll animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+        /* Start from right */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* End at the far left */
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        width: 200px;
+        /* Adjust card size for mobile */
+    }
+}
+
+.service-card svg {
+    width: 40px;
+    height: 40px;
+}
